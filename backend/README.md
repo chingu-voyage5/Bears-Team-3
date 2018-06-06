@@ -1,15 +1,28 @@
-* Ruby version: ruby 2.3.3
+#### Ruby version: ruby 2.3.3
 
-* System dependencies:
+#### System dependencies:
 
-```
-# install bundler
-# https://bundler.io/
-gem install bundler
+* install bundler | https://bundler.io/
+    ```
+    gem install bundler
+    ```
 
-# install dependencies
-bundle install
+* install dependencies
+    ```
+    bundle install
+    ```
 
-# run server
-rails s
-```
+* run migrate
+  ```
+  run rails db:migrate
+  ```
+
+* run seed
+  ```
+  rails db:seed
+  ```
+
+* run server
+  ```
+  rails s
+  ```

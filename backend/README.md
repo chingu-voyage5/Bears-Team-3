@@ -14,7 +14,7 @@
 
 * run migrate
   ```
-  run rails db:migrate
+  rails db:migrate
   ```
 
 * run seed

@@ -2,6 +2,7 @@
   <div id="app">
     <h1>Hello World</h1>
     <h2>Bears-Team-3 :)</h2>
+    <p>{{ currentCount }}</p>
   </div>
 </template>
 
@@ -9,8 +10,13 @@
 export default {
   name: 'app',
   data() {
-    return {};
-  }
+    return {
+      currentCount: 0,
+    };
+  },
+  mounted() {
+    fetch('/api/counters').then(res => res.json()).then(count => this.currentCount = count.number_count);
+  },
 };
 </script>
 

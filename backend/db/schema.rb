@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2018_06_04_143221) do
 
   create_table "counters", force: :cascade do |t|
-    t.text "number_count"
+    t.integer "number_count"
   end
 
 end

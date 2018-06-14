@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  root 'counters#index'
+  resources :counters, only: [:index, :create]
 end

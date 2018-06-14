@@ -1,1 +1,1 @@
-Counter.create(number_count: '0')
+Counter.create(number_count: 0)

@@ -1,17 +1,17 @@
 class CreateOrganizations < ActiveRecord::Migration[5.2]
   def change
     create_table :organizations do |t|
-      t.name :string
-      t.address_1 :string
-      t.address_2 :string
-      t.city :string
-      t.state :string
-      t.zip :string
-      t.phone :string
-      t.blurb :string
-      t.url :string
-      t.donate_url :string
-      t.info_email :string
+      t.string :name  
+      t.string :address_1
+      t.string :address_2
+      t.string :city
+      t.string :state
+      t.string :zip
+      t.string :phone
+      t.string :blurb
+      t.string :url
+      t.string :donate_url
+      t.string :info_email
     end
   end
 end

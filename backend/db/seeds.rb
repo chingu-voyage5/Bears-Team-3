@@ -1,1 +1,11 @@
-Counter.create(number_count: 0)
+# t.string :name
+# t.string :address_1
+# t.string :address_2
+# t.string :city
+# t.string :state
+# t.string :zip
+# t.string :phone
+# t.string :blurb
+# t.string :url
+# t.string :donate_url
+# t.string :info_email

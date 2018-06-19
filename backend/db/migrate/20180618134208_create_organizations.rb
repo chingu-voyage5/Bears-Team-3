@@ -9,6 +9,7 @@ class CreateOrganizations < ActiveRecord::Migration[5.2]
       t.string :zip
       t.string :phone
       t.string :blurb
+      t.string :about
       t.string :url
       t.string :donate_url
       t.string :info_email

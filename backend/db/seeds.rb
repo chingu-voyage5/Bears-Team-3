@@ -170,7 +170,7 @@ Organization.create(
   size: "Small"
 )
 
-Organization.create (
+Organization.create(
   name: "Jewish World Services",
   address_1: "45 West 36th Street",
   address_2: "",

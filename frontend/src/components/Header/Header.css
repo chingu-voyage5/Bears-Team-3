@@ -8,4 +8,5 @@
 .menu-item {
   padding: 1rem;
   color: purple;
+  list-style-type: none;
 }

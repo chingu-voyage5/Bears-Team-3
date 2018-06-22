@@ -4,6 +4,4 @@
   @import 'Home.css'
 </style>
 
-<script>
-
-</script>
+<script></script>

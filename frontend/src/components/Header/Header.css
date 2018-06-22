@@ -1,0 +1,11 @@
+.header-menu {
+  margin: 5rem;
+}
+.menu-items {
+  display: flex;
+  justify-content: center;
+}
+.menu-item {
+  padding: 1rem;
+  color: purple;
+}

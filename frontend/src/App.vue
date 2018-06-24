@@ -13,8 +13,10 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Dosis', sans-serif;;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;

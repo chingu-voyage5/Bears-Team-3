@@ -1,0 +1,38 @@
+.org-page {
+  margin: 2rem;
+}
+.org-main {
+  display: flex;
+  justify-content: center;
+}
+.left-area,
+.right-area {
+  margin: 5rem;
+}
+.right-area {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.org-name {
+  font-size: 4rem;
+  letter-spacing: 0.1rem;
+}
+.org-url {
+  font-size: 2rem;
+  text-decoration: none;
+  color: #2c3e50;
+  cursor: pointer;
+}
+.org-about {
+  width: 70%;
+  margin: 2rem auto;
+  text-align: justify;
+}
+.org-about-title {
+  font-size: 2.3rem;
+}
+.org-about-p {
+  font-size: 1.3rem;
+  line-height: 1.6rem;
+}

@@ -1,0 +1,7 @@
+<h1>Organizations Index<h1>
+<hr>
+<% @organizations.each do |organization| %>
+  <p><h3> <%= link_to organization.name, organization_path(organization) %> </h3></p>
+  <p><h4> <%= organization.blurb %> </h4></p>
+  <br>
+<% end %>

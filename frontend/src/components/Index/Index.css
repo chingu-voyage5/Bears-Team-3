@@ -1,0 +1,21 @@
+.orgs-list {
+  width: 50%;
+  display: block;
+  margin: 2rem auto;
+}
+.orgs-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+.item-img {
+  width: 300px;
+}
+.item-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: left;
+  margin-left: 2rem;
+}

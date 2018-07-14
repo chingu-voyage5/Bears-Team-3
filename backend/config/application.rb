@@ -17,6 +17,9 @@ module Backend
     require 'rake'
     load_tasks
 
+    Rake::Task['db:setup']
+    Rake::Task['db:migrate']
+
     Rake::Task['import:organizations'].invoke
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

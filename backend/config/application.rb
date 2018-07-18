@@ -1,26 +1,30 @@
 require_relative 'boot'
 require 'rails/all'
+# Rake::Task['import:organizations'].invoke
+
+# Rake("import:organizations")
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-
-# Explore options for initialization including run rake task import:organizations
-# Rails.load_config_initializers
-# Rake::Task['import:organizations'].execute
 
 module Backend
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
-    require 'rake'
-    load_tasks
 
-    Rake::Task['db:setup']
-    Rake::Task['db:migrate']
+  ###
+  # rake = Rake.application
+  # rake.init
+  # you can import addition *.rake files
+  # app.add_import 'some/other/file.rake'
+  # rake.load_rakefile
+  (rake['db:create'].invoke "testapp_development")
+  #=> Database 'testapp_development' already exists
+  #=> Database 'testapp_test' already exists
+  ###
 
-    Rake::Task['import:organizations'].invoke
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

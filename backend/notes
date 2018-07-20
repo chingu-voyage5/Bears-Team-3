@@ -1,0 +1,28 @@
+*/lib/tasks/import_organization.rake*
+
+require 'csv'
+
+namespace :import do
+
+  desc "Import organizations from CSV file"
+  organizations = []
+  task organizations: :environment do
+    CSV.foreach("./organizations.csv", headers: true) do |row|
+      organizations << Organization.new(row.to_h)
+    end
+    organizations.each do |org|
+      org.save
+    end
+  end
+end
+
+*/config/application.rb*
+rake = Rake.application
+rake.init
+you can import addition *.rake files
+app.add_import 'some/other/file.rake'*
+# rake.load_rakefile
+(rake['db:create'].invoke "testapp_development")
+#=> Database 'testapp_development' already exists
+#=> Database 'testapp_test' already exists
+###

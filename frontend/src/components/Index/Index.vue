@@ -4,4 +4,17 @@
   @import 'Index.css'
 </style>
 
-<script></script>
+<script>
+  export default {
+    data: function() {
+      return {
+        organizations: []
+      };
+    },
+    mounted: function () {
+      fetch('/api/organizations')
+        .then(res => res.json())
+        .then(data => this.organizations = data);
+    }
+  }
+</script>

@@ -6,16 +6,18 @@
 .orgs-item {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   margin: 2rem 0;
 }
 .item-img {
   width: 300px;
 }
+.item-name {
+  margin: 0;
+}
 .item-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   text-align: left;
   margin-left: 2rem;
 }

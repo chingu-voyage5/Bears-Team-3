@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './components/Home/Home';
 import Organization from './components/Organization/Organization';
-import Index from './components/Index/Index';
+import Organizations from './components/Organizations/Organizations';
 import Search from './components/Search/Search';
 
 Vue.use(Router);
@@ -21,9 +21,9 @@ export default new Router({
       component: Organization
     },
     {
-      path: '/index',
-      name: 'Index',
-      component: Index
+      path: '/organizations',
+      name: 'Organizations',
+      component: Organizations
     },
     {
       path: '/search',

@@ -1,7 +1,7 @@
-<template src="./Index.html"></template>
+<template src="./Organizations.html"></template>
 
 <style scoped lang="css">
-  @import 'Index.css'
+  @import 'Organizations.css'
 </style>
 
 <script>

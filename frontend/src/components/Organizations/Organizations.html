@@ -9,7 +9,7 @@
       <div class="item-content">
         <h2 class="item-name">{{ organization.name }}</h2>
         <p class="item-blurb">{{ organization.blurb }}</p>
-        <a class="link-to-page" :href="'organizations/' + organization.id">Read More</a>
+        <router-link class="link-to-page" :to="'organizations/' + organization.id">Read More</router-link>
       </div>
     </div>
   </div>

@@ -1,0 +1,16 @@
+<div class="index">
+  <h1>Browse Organizations</h1>
+  <hr>
+  <div class="orgs-list">
+    <div class="orgs-item" v-for="organization in organizations">
+      <div class="img-container">
+        <img class="item-img" src="./../../assets/bd.jpg" alt="Brilliant Detroit Logo">
+      </div>
+      <div class="item-content">
+        <h2 class="item-name">{{ organization.name }}</h2>
+        <p class="item-blurb">{{ organization.blurb }}</p>
+        <router-link class="link-to-page" :to="'organizations/' + organization.id">Read More</router-link>
+      </div>
+    </div>
+  </div>
+</div>

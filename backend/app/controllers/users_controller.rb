@@ -7,11 +7,20 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
+    if @user = User.create(user_params)
+      session[:user_id] = @user.id
+    else
+
+      redirect_to :new
+    end
   end
 
   def show
-    @user = User.find(params[:id])
+    if params[:id] == session[:user_id]
+      @user = User.find(params[:id])
+    else
+      redirect_to root_path
+    end
   end
 
   private

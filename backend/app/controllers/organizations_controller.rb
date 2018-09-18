@@ -6,13 +6,20 @@ class OrganizationsController < ApplicationController
   end
 
   def new
+    # if user has been created:
+      # @user = User.find(params[:id])
+      # @organization = Organization.new
+    # else 
+    @user = User.new
     @organization = Organization.new
   end
 
   def create
+    # first create an admin user and then they create the organization account
     # if User.create(params[:organization][:user]) #&& Organization.new(organization_params)
     #   @user = User.create(params[:organization][:user])
-      if @organization = Organization.create!(organization_params)
+      if @organization = Organization.new(organization_params)
+        @organization.user_id = User.create!()
       # @organization.user = @user
       # if @organization.save!
         # session[:user_id] = @user.id
@@ -36,7 +43,8 @@ class OrganizationsController < ApplicationController
   private
 
   def organization_params
-    params.require(:organization).permit(:name, :address_1, :address_2, :city, :state, :zip, :phone, :blurb, :about, :url, :donate_url, :info_email, :size, :image, :user_id, user: [:first_name, :last_name, :email, :username, :password, :password_confirmation])
+    params.require(:organization).permit(:name, :address_1, :address_2, :city, :state, :zip, :phone, :blurb, :about, :url, :donate_url, :info_email, :size, :image, :user_id)
+    # users: [:first_name, :last_name, :email, :username, :password, :password_confirmation]
   end
 
 end

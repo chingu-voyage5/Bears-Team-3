@@ -6,6 +6,6 @@ class Organization < ActiveRecord::Base
   validates :url, presence: true, uniqueness: true
   validates :size, presence: true
   # because an organization has to have an admin user
-  # validates :user_id, presence: true
+  validates :user_id, presence: true
   validates :blurb, length: { maximum: 300 }
 end

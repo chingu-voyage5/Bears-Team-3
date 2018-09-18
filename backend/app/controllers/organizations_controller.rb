@@ -10,13 +10,21 @@ class OrganizationsController < ApplicationController
   end
 
   def create
-    if @organization = Organization.create(organization_params)
-      session[:user_id] = @user.id
+    if User.create(params[:organization][:user]) #&& Organization.new(organization_params)
+      @user = User.create(params[:organization][:user])
+      @organization = Organization.new
+      @organization.user_id = @user.id
+      @organzation.password = @user.password
+      if @organization.save
+        session[:user_id] = @user.id
 
       # ActiveRecord validation errors can be captured here
-      redirect_to organization_path(@organization)
+        redirect_to organization_path(@organization)
+      else
+        redirect_to new_organization_path
+      end
     else
-
+      # because user params were incorrect
       render :new
     end
   end
@@ -29,7 +37,7 @@ class OrganizationsController < ApplicationController
   private
 
   def organization_params
-    params.require(:organization).permit(:name, :address_1, :address_2, :city, :state, :zip, :phone, :blurb, :about, :url, :donate_url, :info_email, :size, :image, :user_id, user: [:username, :password, :password_confirmation])
+    params.require(:organization).permit(:name, :address_1, :address_2, :city, :state, :zip, :phone, :blurb, :about, :url, :donate_url, :info_email, :size, :image, :user_id, user: [:first_name, :last_name, :email, :username, :password, :password_confirmation])
   end
 
 end

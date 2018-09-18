@@ -29,13 +29,21 @@
   <%= f.text_field :size %>
   <p><%= f.label 'Image' %></p> <!--###-->
   <%= f.text_field :image %>
-  <p><%= f.label 'Password' %></p>
-  <%= f.password_field :password %>
-  <p><%= f.label 'Please Re-Enter the Password' %></p>
-  <%= f.password_field :password_confirmation %>
-    <%= fields_for :user do %>
-      <p><%= label_tag 'create a username for your admin user account'%></p>
-      <%= text_field_tag :username %>
+<br>
+    <%= f.fields_for :users do |user| %>
+      <p><%= user.label 'First Name'%></p>
+      <%= user.text_field :first_name %>
+      <p><%= user.label 'Last Name'%></p>
+      <%= user.text_field :last_name %>
+      <p><%= user.label 'Email'%></p>
+      <%= user.text_field :email %>
+      <p><%= user.label 'create a username for your admin user account'%></p>
+      <%= user.text_field :username %>
+      <p><%= user.label 'Password' %></p>
+      <%= user.password_field :password %>
+      <p><%= user.label 'Please Re-Enter the Password' %></p>
+      <%= user.password_field :password_confirmation %>
     <% end %>
+<br>
   <p><%= f.submit %></p>
 <% end %>

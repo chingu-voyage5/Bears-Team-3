@@ -1,1 +1,18 @@
-CREATE A NEW USER
+<h2>CREATE A NEW USER</h2>
+
+<%= form_for @user do |f| %>
+  <p><%= f.label 'first_name' %></p>
+  <%= f.text_field :first_name %>
+  <p><%= f.label 'last_name' %></p>
+  <%= f.text_field :last_name %>
+  <p><%= f.label 'username' %></p>
+  <%= f.text_field :username %>
+  <p><%= f.label 'email' %></p>
+  <%= f.text_field :email %>
+  <p><%= f.label 'password' %></p>
+  <%= f.password_field :password %>
+  <p><%= f.label 're-enter password' %></p>
+  <%= f.password_field :password_confirmation %>
+  <p><%= f.submit %></p>
+
+<% end %>

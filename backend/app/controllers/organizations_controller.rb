@@ -9,6 +9,9 @@ class OrganizationsController < ApplicationController
     @organization = Organization.new
   end
 
+  def create
+  end
+
   def show
     @organization = Organization.find(params[:id])
     # render json: @organization

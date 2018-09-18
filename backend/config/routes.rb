@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'welcome#home'
   resources :users
-  resources :organizations, only: [:index, :show]
+  resources :organizations
   resources :sessions, only: [:create, :delete]
 
   get '/login', to: "sessions#new"

@@ -1,1 +1,41 @@
 <h2>Register Your Organization Here!</h2>
+
+<%= form_for @organization do |f| %>
+  <p><%= f.label 'Organization Name' %></p>
+  <%= f.text_field :name %>
+  <p><%= f.label 'Street Address' %></p>
+  <%= f.text_field :address_1 %>
+  <p><%= f.label 'Street Address (optional)' %></p>
+  <%= f.text_field :address_2 %>
+  <p><%= f.label 'City' %></p>
+  <%= f.text_field :city %>
+  <p><%= f.label 'State' %></p>
+  <%= f.text_field :state %>
+  <p><%= f.label 'Zip Code' %></p>
+  <%= f.text_field :zip %>
+  <p><%= f.label 'Phone Number' %></p>
+  <%= f.text_field :phone %>
+  <p><%= f.label 'Tell everyone about your organization with a short blurb' %></p>
+  <%= f.text_area :blurb %>
+  <p><%= f.label 'Provide a description of your organization\'s vision, mission, and any other important information' %></p>
+  <%= f.text_area :about %>
+  <p><%= f.label 'Organization Website' %></p>
+  <%= f.text_field :url %>
+  <p><%= f.label 'Donation URL' %></p>
+  <%= f.text_field :donate_url %>
+  <p><%= f.label 'Info Email' %></p>
+  <%= f.text_field :info_email %>
+  <p><%= f.label 'SIZY SIZY INFO!!!@!#$R$!#$%' %></p>
+  <%= f.text_field :size %>
+  <p><%= f.label 'Image' %></p> <!--###-->
+  <%= f.text_field :image %>
+  <p><%= f.label 'Password' %></p>
+  <%= f.password_field :password %>
+  <p><%= f.label 'Please Re-Enter the Password' %></p>
+  <%= f.password_field :password_confirmation %>
+    <%= fields_for :user do %>
+      <p><%= label_tag 'create a username for your admin user account'%></p>
+      <%= text_field_tag :username %>
+    <% end %>
+  <p><%= f.submit %></p>
+<% end %>

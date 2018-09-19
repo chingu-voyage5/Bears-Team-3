@@ -6,12 +6,25 @@ class OrganizationsController < ApplicationController
   end
 
   def new
+
+    if !session[:user_id]
+      @user = User.new
+      @organization = Organization.new
+
+      render 'users/new'
+
+    else
+      @organization = Organization.new
+      @user = User.find(session[:user_id])
+
+      redirect_to new_organization_path
+    end
     # if user has been created:
       # @user = User.find(params[:id])
       # @organization = Organization.new
-    # else 
-    @user = User.new
-    @organization = Organization.new
+    # else
+    # @user = User.new
+    # @organization = Organization.new
   end
 
   def create

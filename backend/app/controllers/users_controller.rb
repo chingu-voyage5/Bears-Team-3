@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def new
+    # if !@organization.nil?
     @user = User.new
   end
 

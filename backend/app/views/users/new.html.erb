@@ -1,4 +1,12 @@
-<h2>CREATE A NEW USER</h2>
+
+
+<% if !@organization.nil? %>
+  <h2>CREATE AN ADMIN USER ACCOUNT FOR YOUR ORGANIZATION </h2>
+  <% @user.admin = true %>
+  <% binding.pry %>
+<% else %>
+  <h2>CREATE A NEW USER</h2>
+<% end %>
 
 <%= form_for @user do |f| %>
   <p><%= f.label 'first_name' %></p>
